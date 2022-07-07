@@ -32,20 +32,14 @@ def page(url, headers):
 
 def analysis(comment):
     comment_list = re.findall(r'<d p=.*?>(.*?)</d>', comment)
-    
-    start = time.time()
     comment_str = clean(comment_list)
-    stop = time.time()
-    run_time = stop - start
-    print(run_time)
-    # print(comment_str)
-    # mask = np.array(Image.open('ChinaMap.png'))
-    # wc = WordCloud(background_color=None, repeat=True, height=480, width=854,mask=mask, mode='RGBA')
-    # wc.generate(comment_str)
-    # plt.axis("off")
-    # plt.imshow(wc, interpolation="bilinear")
-    # plt.show()
-    # wc.to_file('c.png')
+    mask = np.array(Image.open('ChinaMap.png'))
+    wc = WordCloud(background_color=None, repeat=True, height=480, width=854,mask=mask, mode='RGBA', font_path='千图纤墨体.ttf')
+    wc.generate(comment_str)
+    plt.axis("off")
+    plt.imshow(wc, interpolation="bilinear")
+    plt.show()
+    wc.to_file('c.png')
 
 if __name__ == '__main__':
     url = 'https://www.bilibili.com/video/BV12t4y1n7b6?spm_id_from=333.337.search-card.all.click&vd_source=655ba79c7a5400218ba336bf2746db0e'

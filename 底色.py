@@ -1,6 +1,5 @@
 # 时间：2022/2/13 15:57
 # -*- coding:utf-8 -*-
-# !/usr/bin/env python
 # -*- coding:utf-8 -*-
 import cv2
 import numpy as np

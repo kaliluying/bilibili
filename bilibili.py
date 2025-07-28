@@ -69,6 +69,7 @@ class Page:
         self.save(link)
 
 
+# 番剧失效
 # 番剧爬取
 class Drama(Page):
     def analysis(self, html):
